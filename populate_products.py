@@ -2,6 +2,18 @@ import psycopg2
 import pandas as pd
 import json
 import os
+import numpy as np
+
+from dotenv import load_dotenv
+
+db_config = {
+        'host': os.getenv('PG_HOST'),
+        'dbname': os.getenv('PG_DATABASE'),
+        'user': os.getenv('PG_USER'),
+        'password': os.getenv('PG_PASSWORD')
+    }
+    
+directory = "data"
 
 def extract_data_products(directory):
     data_frames = []
@@ -72,13 +84,6 @@ def transform_data_products(products_data):
 
 
 def load_data_products(conn, data):
-    """
-    Loads product data from a DataFrame into the 'products' table in a PostgreSQL database.
-
-    Args:
-        conn: A psycopg2 connection object to the PostgreSQL database.
-        data: A pandas DataFrame containing the product data to be inserted.
-    """
 
     insert_query = '''
     INSERT INTO products (
@@ -132,7 +137,7 @@ def load_data_products(conn, data):
         total_records = cur.fetchone()[0]
         print(f"Total number of records in 'products' table: {total_records}")
 
-def etl_pipeline_products(directory, db_config):
+def populating_products(directory, db_config):
     try:
         # Extract
         data = extract_data_products(directory)
@@ -146,3 +151,5 @@ def etl_pipeline_products(directory, db_config):
 
     except Exception as e:
         print(f"An error occurred in the ETL pipeline for products: {e}")
+
+populating_products(directory, db_config)

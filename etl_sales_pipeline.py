@@ -8,6 +8,15 @@ from psycopg2 import sql, Error
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 from psycopg2 import extras
 
+db_config = {
+        'host': os.getenv('PG_HOST'),
+        'dbname': os.getenv('PG_DATABASE'),
+        'user': os.getenv('PG_USER'),
+        'password': os.getenv('PG_PASSWORD')
+    }
+    
+directory = "data"
+
 def extract_data_sales(directory):
     """
     Extracts and processes sales-related data from JSON files in the specified directory.
@@ -220,11 +229,9 @@ def etl_pipeline_sales(directory, db_config):
     try:
         # Extract data
         data = extract_data_sales(directory)
-        print("Data extracted successfully.")
 
         # Transform data
         transformed_data_sales, transformed_data_sales_detail = transform_data_sales(data)
-        print("Data transformed successfully.")
 
         # Load sales data
         with psycopg2.connect(**db_config) as conn:
@@ -236,3 +243,5 @@ def etl_pipeline_sales(directory, db_config):
 
     except Exception as e:
         print(f"An error occurred in the ETL pipeline: {e}")
+
+etl_pipeline_sales(directory, db_config)
