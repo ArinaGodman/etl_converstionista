@@ -110,14 +110,6 @@ def load_data_products(conn, data):
         for idx, row in data.iterrows():
             item_id = row['item_id']
 
-            # Check if item_id already exists in the table
-            cur.execute("SELECT item_id FROM products WHERE item_id = %s", (item_id,))
-            existing_item = cur.fetchone()
-
-            if existing_item:
-                print(f"Skipping item_id {item_id} as it already exists in the table.")
-                continue
-
             cur.execute(insert_query, (
                 row['item_id'],
                 row['item_name'],
