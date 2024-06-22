@@ -10,5 +10,14 @@
             "username": "postgres",
             "password": "12345678"
         }
+    ],
+    "python.pythonPath": "C:\\Users\\lalka\\anaconda3\\envs\\streamlitenv\\python.exe", // replace with your environment path
+    "python.autoComplete.extraPaths": [
+        "C:\\Users\\lalka\\anaconda3\\Lib\\site-packages",
+        "C:\\Users\\lalka\\anaconda3\\Lib\\site-packages\\psycopg2"
+    ],
+    "python.analysis.extraPaths": [
+        "C:\\Users\\lalka\\anaconda3\\Lib\\site-packages",
+        "C:\\Users\\lalka\\anaconda3\\Lib\\site-packages\\psycopg2"
     ]
 }

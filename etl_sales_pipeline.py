@@ -223,7 +223,7 @@ def etl_pipeline_sales(directory, db_config):
         print("Data extracted successfully.")
 
         # Transform data
-        transformed_data_sales, transformed_data_sales_detail = transform_data_sales_1(data)
+        transformed_data_sales, transformed_data_sales_detail = transform_data_sales(data)
         print("Data transformed successfully.")
 
         # Load sales data
@@ -236,16 +236,3 @@ def etl_pipeline_sales(directory, db_config):
 
     except Exception as e:
         print(f"An error occurred in the ETL pipeline: {e}")
-
-
-if __name__ == "__main__":
-    # Example usage
-    directory = "path/to/sales/data"
-    db_config = {
-        "host": "localhost",
-        "database": "my_database",
-        "user": "my_user",
-        "password": "my_password"
-    }
-    
-    etl_sales_pipeline(directory, db_config)

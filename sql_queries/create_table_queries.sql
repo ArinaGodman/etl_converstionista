@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS products (
 );
 
 -- Create Dates table
-CREATE TABLE IF NOT EXISTS Dates (
+CREATE TABLE IF NOT EXISTS dates (
     date DATE PRIMARY KEY,
     day INTEGER,
     month INTEGER,
@@ -29,7 +29,8 @@ CREATE TABLE IF NOT EXISTS sales (
     user_pseudo_id VARCHAR(255),
     item_quantity NUMERIC,
     total_sales NUMERIC(10,2),
-    total_sales_in_usd NUMERIC(10,2)
+    total_sales_in_usd NUMERIC(10,2),
+    FOREIGN KEY (event_date) REFERENCES dates(date)
 );
 
 -- Create sales_detail table
