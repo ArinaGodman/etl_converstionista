@@ -1,5 +1,3 @@
--- File: schema.sql
-
 -- Create products table
 CREATE TABLE IF NOT EXISTS products (
     item_id VARCHAR(255) PRIMARY KEY,

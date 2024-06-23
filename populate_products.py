@@ -51,14 +51,15 @@ def extract_data_products(directory):
     return combined_items_df
 
 def transform_data_products(products_data):
-    patterns_to_replace = [r'(not set)', r'not_available', r'nan']
-    for col in products_data.columns:
-        if products_data[col].dtype == 'object':  
-            replacement_value = ''  
-        else:
-            replacement_value = np.nan
+    patterns_to_replace = [r'(not set)', r'not_available', r'nan','()']
     
-    # Some of items had same name but with underscore in the end
+    for col in products_data.columns:
+        if products_data[col].dtype == 'object':
+            for pattern in patterns_to_replace:
+                products_data[col] = products_data[col].str.replace(pattern, '', regex=True)
+        else:
+            products_data[col] = products_data[col].replace(patterns_to_replace, np.nan)
+    
     products_data['item_name'] = products_data['item_name'].str.rstrip('_')
     
     unique_items_df = products_data.drop_duplicates(subset=['item_id', 'item_name']).copy()
