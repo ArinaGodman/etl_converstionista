@@ -113,22 +113,7 @@ def load_data_sales(conn, data):
         data (pd.DataFrame): DataFrame containing sales data to be loaded into the database.
 
     """
-    # Create table statement
-    create_table_query = '''
-    CREATE TABLE IF NOT EXISTS sales (
-        ecommerce_transaction_id VARCHAR(255) PRIMARY KEY,
-        event_date DATE,
-        event_value_in_usd NUMERIC,
-        user_pseudo_id VARCHAR(255),
-        item_quantity NUMERIC,
-        total_sales NUMERIC(10,2),
-        total_sales_in_usd NUMERIC(10,2)
-    );
-    '''
-
     with conn.cursor() as cur:
-        
-        cur.execute(create_table_query)
 
         for idx, row in data.iterrows():
             cur.execute('''
@@ -170,23 +155,7 @@ def load_data_sales_detail(conn, data):
         conn (psycopg2.connection): Connection object to the PostgreSQL database.
         data (pandas.DataFrame): Transformed sales detail data.
     """
-    # Create table statement
-    create_table_query = '''
-    CREATE TABLE IF NOT EXISTS sales_detail (
-        detail_id SERIAL PRIMARY KEY,
-        ecommerce_transaction_id VARCHAR(255),
-        item_id VARCHAR(255),
-        item_quantity NUMERIC,
-        item_price NUMERIC,
-        FOREIGN KEY (item_id) REFERENCES products(item_id),
-        FOREIGN KEY (ecommerce_transaction_id) REFERENCES sales(ecommerce_transaction_id)
-    )
-    '''
-
     with conn.cursor() as cur:
-
-        cur.execute(create_table_query)
-        conn.commit()
 
         insert_query = '''
         INSERT INTO sales_detail (
@@ -208,7 +177,7 @@ def load_data_sales_detail(conn, data):
         conn.commit()
         print("Data loaded successfully into 'sales_detail' table.")
 
-        # Count total records in 'sales' table
+        # Count total records in 'sales_detail' table
         cur.execute('''
         SELECT COUNT(*) AS total_records
         FROM sales_detail;
