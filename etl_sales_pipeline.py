@@ -4,9 +4,9 @@ import json
 import os
 
 import psycopg2
-from psycopg2 import sql, Error
-from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
-from psycopg2 import extras
+from dotenv import load_dotenv
+
+load_dotenv()
 
 db_config = {
         'host': os.getenv('PG_HOST'),
@@ -14,6 +14,8 @@ db_config = {
         'user': os.getenv('PG_USER'),
         'password': os.getenv('PG_PASSWORD')
     }
+
+print(db_config)
     
 directory = "data"
 

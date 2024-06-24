@@ -1,10 +1,12 @@
-import psycopg2
 import pandas as pd
+import numpy as np
 import json
 import os
-import numpy as np
 
+import psycopg2
 from dotenv import load_dotenv
+
+load_dotenv()
 
 db_config = {
         'host': os.getenv('PG_HOST'),
