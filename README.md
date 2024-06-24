@@ -26,5 +26,4 @@ conversionista_etl/
 ├── populating_products.py                 # Script for populating products-table from json-files
 ├── visual.py                              # Script for creating a few visuals of sales-data
 ├── .env                                   # Environment variables for database configuration
-├── requirements.txt                       # Python dependencies
 ├── README.md                              # Project documentation

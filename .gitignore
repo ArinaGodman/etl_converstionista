@@ -4,6 +4,3 @@ __pycache__/
 
 # Ignore VSCode directory
 .vscode/
-
-# Ignore run_etl.bat file
-run_etl.bat

@@ -14,8 +14,6 @@ db_config = {
         'user': os.getenv('PG_USER'),
         'password': os.getenv('PG_PASSWORD')
     }
-
-print(db_config)
     
 directory = "data"
 
