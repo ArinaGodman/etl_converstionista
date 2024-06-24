@@ -29,6 +29,7 @@ conversionista_etl/
 │   ├── create_table_queries.sql           # SQL script to create the necessary tables for just this project
 │   └── populating_dates_table_query.sql   # Query for populating dates-table in this project
 ├── etl_sales_pipeline.py                  # Main ETL script
+├── populating_products.py                 # Script for populating products-table from json-files
 ├── .env                                   # Environment variables for database configuration
 ├── requirements.txt                       # Python dependencies
 ├── README.md                              # Project documentation
