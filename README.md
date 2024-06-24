@@ -98,5 +98,5 @@ Follow these steps to set up and run the ETL pipeline:
 
 Database structure with more time and information could look like this:
 
-![Database Structure](db_design_w_queries/db_diagram.png)
+![Database Structure](db_design_w_queries/db_design.png)
 
