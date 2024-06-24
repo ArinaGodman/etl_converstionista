@@ -42,8 +42,8 @@ conversionista_etl/
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/Sales_ETL_Pipeline.git
-    cd Sales_ETL_Pipeline
+    git clone https://github.com/your-username/etl_converstionista.git
+    cd etl_converstionista
     ```
 
 2. **Create and activate a virtual environment:**
@@ -58,7 +58,7 @@ conversionista_etl/
     ```
 
 4. **Configure the database connection:**
-    - Create a `.env` file in the root directory and add your PostgreSQL database configuration:
+    - Create an `.env` file in the root directory and add your PostgreSQL database configuration. You can also just change my file:
     ```
     PG_HOST=your_host
     PG_DATABASE=your_database
@@ -74,7 +74,22 @@ Follow these steps to set up and run the ETL pipeline:
 
    Execute the SQL scripts located in the `sql_queries/` directory to create the necessary tables in your PostgreSQL database. Ensure you have connected to your database before running these scripts.
 
-   ```bash
-   psql -U username -d database_name -a -f sql_queries/create_tables.sql
+   sql_queries/create_tables.sql
 
-   Replace username with your PostgreSQL username and database_name with the name of your database.
+2. **Run SQL Script for Populating Dates Table**
+
+   Run the SQL script to populate the dates table with required data.
+   sql_queries/populating_dates_table_query.sql
+
+3. **Run Python Script for Populating Products Table**
+
+   Execute the Python script populating_products.py located in the root directory to populate the products table from JSON data files in the data/ directory.
+
+   python populating_products.py
+
+
+4. **Execute the main ETL pipeline script etl_sales_pipeline.py**
+   Run python etl_sales_pipeline.py to extract sales data from JSON files, transform it into structured formats, and load it into the PostgreSQL database. Ensure your JSON data files are placed in the data/ directory before running the script.
+
+   python etl_sales_pipeline.py
+
