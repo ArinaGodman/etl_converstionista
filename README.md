@@ -4,7 +4,12 @@ This project contains an ETL (Extract, Transform, Load) pipeline for processing 
 
 ## Overview
 
-The ETL pipeline extracts sales data from JSON files, transforms it into a structured format, and loads it into a PostgreSQL database. The pipeline processes data to create summary and detail views of sales transactions, making it easier to perform analysis and reporting.
+The ETL pipeline extracts sales data from JSON files, transforms it into a structured format, and loads it into a PostgreSQL database. This process creates both summary and detailed views of sales, facilitating analysis and reporting. The ETL pipeline is automated with the help of Windows Task Scheduler.
+
+In addition to the sales and sales_detail tables, products and dates tables were created and populated from the JSON files.
+
+In the db_design_w_queries directory, you can find a .png file illustrating the potential database structure with more time and information. Queries for creating these tables are also provided in the same directory.
+
 
 ## Project Structure
 
@@ -19,6 +24,7 @@ conversionista_etl/
 │   └── populating_dates_table_query.sql   # Query for populating dates-table in this project
 ├── etl_sales_pipeline.py                  # Main ETL script
 ├── populating_products.py                 # Script for populating products-table from json-files
+├── visual.py                              # Script for creating a few visuals of sales-data
 ├── .env                                   # Environment variables for database configuration
 ├── requirements.txt                       # Python dependencies
 ├── README.md                              # Project documentation
