@@ -74,18 +74,19 @@ Follow these steps to set up and run the ETL pipeline:
 
    Execute the SQL scripts located in the `sql_queries/` directory to create the necessary tables in your PostgreSQL database. Ensure you have connected to your database before running these scripts.
 
-   sql_queries/create_tables.sql
+   `sql_queries/create_tables.sql`
 
 2. **Run SQL Script for Populating Dates Table**
 
    Run the SQL script to populate the dates table with required data.
-   sql_queries/populating_dates_table_query.sql
+   
+   `sql_queries/populating_dates_table_query.sql`
 
 3. **Run Python Script for Populating Products Table**
 
-   Execute the Python script populating_products.py located in the root directory to populate the products table from JSON data files in the data/ directory.
+   Execute the Python script `populating_products.py` located in the root directory to populate the products table from JSON data files in the data/ directory.
 
-   python populating_products.py
+   `python populating_products.py`
 
 
 4. **Execute the main ETL pipeline script etl_sales_pipeline.py**
