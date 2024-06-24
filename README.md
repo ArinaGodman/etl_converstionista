@@ -19,13 +19,13 @@ The ETL pipeline extracts sales data from JSON files, transforms it into a struc
 
 ## Project Structure
 
+```plaintext
 conversionista_etl/
-│
-├── data/ # Directory containing JSON data files
-├── db_design_w_queries/ # Directory containing db-design and queries to create tables for this design
-├── sql_queries/ # Directory containing queries to create table for this project and query for populating dates-table
-├── etl_sales_pipeline.py # Main ETL script
-├── monitor_sales.py # Script to monitor records in sales tables
-├── .env # Environment variables for database configuration
-├── requirements.txt # Python dependencies
-├── README.md # Project documentation
+├── data/                         # Directory containing JSON data files
+├── db_design_w_queries/          # Directory containing db-design and queries to create tables for this design
+├── sql_queries/                  # Directory containing queries to create tables for this project and a query for populating dates-table
+├── etl_sales_pipeline.py         # Main ETL script
+├── monitor_sales.py              # Script to monitor records in sales tables
+├── .env                          # Environment variables for database configuration
+├── requirements.txt              # Python dependencies
+├── README.md                     # Project documentation
