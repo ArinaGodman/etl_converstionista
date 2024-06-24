@@ -8,7 +8,7 @@ This project contains an ETL (Extract, Transform, Load) pipeline for processing 
 - [Project Structure](#project-structure)
 - [Setup and Installation](#setup-and-installation)
 - [Usage](#usage)
-- [Potential Database Schema](#database-schema)
+- [Potential Database Schema](#potential-database-schema)
 
 ## Overview
 
