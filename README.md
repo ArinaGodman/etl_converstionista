@@ -115,7 +115,7 @@ Current database schema:
 
 ## Potential Database Schema
 
-Database structure with more time and information could look like this:
+Database structure with more time and data could look like this:
 
 ![Possible Database Structure](possible_db_design/db_design.png)
 
