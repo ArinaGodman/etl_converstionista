@@ -29,10 +29,14 @@ conversionista_etl/
 ├── possible_db_design/                    # Directory containing possible db-design and queries to create tables
 │   ├── create_tables.sql                  # SQL script to create the necessary tables accorging to design
 │   └── db_diagram.png                     # Possible database schema diagram
-├── current_db_design/                     # Directory containing queries to create tables for this project and a query for    populating dates-table
+├── current_db_design/                     # Directory containing queries to create tables for this project and a query for populating dates-table
     ├── current_db_design.png              # Current database schema diagram
 │   ├── create_table_queries.sql           # SQL script to create the necessary tables for just this project
 │   └── populating_dates_table_query.sql   # Query for populating dates-table in this project
+├── visuals/                               # Directory containing visuals and script for them
+│   ├── most_sold_categories.png           # Pie chart for most sold categories
+│   ├── sales_per_date.png                 # Bar chart sales-per-date
+│   └── visuals.py                         # Script for creating visuals
 ├── etl_sales_pipeline.py                  # Main ETL script
 ├── populating_products.py                 # Script for populating products-table from json-files
 ├── visual.py                              # Script for creating a few visuals of sales-data
