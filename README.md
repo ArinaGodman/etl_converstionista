@@ -30,7 +30,7 @@ conversionista_etl/
 │   ├── create_tables.sql                  # SQL script to create the necessary tables accorging to design
 │   └── db_diagram.png                     # Possible database schema diagram
 ├── current_db_design/                     # Directory containing queries to create tables for this project and a query for populating dates-table
-    ├── current_db_design.png              # Current database schema diagram
+│   ├── current_db_design.png              # Current database schema diagram
 │   ├── create_table_queries.sql           # SQL script to create the necessary tables for just this project
 │   └── populating_dates_table_query.sql   # Query for populating dates-table in this project
 ├── visuals/                               # Directory containing visuals and script for them
@@ -109,7 +109,9 @@ Current database schema:
 
 ## Visuals
 
+![Sales per date](visuals/sales_per_date.png)
 
+![Most sold categories](visuals/most_sold_categories.png)
 
 ## Potential Database Schema
 
