@@ -9,6 +9,7 @@ This project contains an ETL (Extract, Transform, Load) pipeline for processing 
 - [Setup and Installation](#setup-and-installation)
 - [Usage](#usage)
 - [Database Schema](database-schema)
+- [Visuals](#visuals)
 - [Potential Database Schema](#potential-database-schema)
 
 ## Overview
@@ -25,11 +26,11 @@ In the db_design_w_queries directory, you can find a .png file illustrating the 
 ```plaintext
 conversionista_etl/
 ├── data/                                  # Directory containing JSON data files
-├── db_design_w_queries/                   # Directory containing db-design and queries to create tables for this design
+├── possible_db_design/                    # Directory containing possible db-design and queries to create tables
 │   ├── create_tables.sql                  # SQL script to create the necessary tables accorging to design
-│   ├── current_db_design.png              # Current database schema diagram
 │   └── db_diagram.png                     # Possible database schema diagram
-├── sql_queries/                           # Directory containing queries to create tables for this project and a query for    populating dates-table
+├── current_db_design/                     # Directory containing queries to create tables for this project and a query for    populating dates-table
+    ├── current_db_design.png              # Current database schema diagram
 │   ├── create_table_queries.sql           # SQL script to create the necessary tables for just this project
 │   └── populating_dates_table_query.sql   # Query for populating dates-table in this project
 ├── etl_sales_pipeline.py                  # Main ETL script
@@ -100,11 +101,15 @@ Follow these steps to set up and run the ETL pipeline:
 
 Current database schema: 
 
-![Database Structure](db_design_w_queries/current_db_design.png)
+![Current Database Structure](current_db_design/current_db_design.png)
+
+## Visuals
+
+
 
 ## Potential Database Schema
 
 Database structure with more time and information could look like this:
 
-![Database Structure](db_design_w_queries/db_design.png)
+![Possible Database Structure](possible_db_design/db_design.png)
 
