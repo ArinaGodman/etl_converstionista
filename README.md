@@ -21,14 +21,14 @@ The ETL pipeline extracts sales data from JSON files, transforms it into a struc
 
 ```plaintext
 conversionista_etl/
-├── data/                         # Directory containing JSON data files
-├── db_design_w_queries/          # Directory containing db-design and queries to create tables for this design
-│   ├── create_tables.sql         # SQL script to create the necessary tables accorging to design
-│   └── db_diagram.png            # Database schema diagram
-├── sql_queries/                  # Directory containing queries to create tables for this project and a query for    populating dates-table
-│   ├── create_table_queries.sql  # SQL script to create the necessary tables for just this project
+├── data/                                  # Directory containing JSON data files
+├── db_design_w_queries/                   # Directory containing db-design and queries to create tables for this design
+│   ├── create_tables.sql                  # SQL script to create the necessary tables accorging to design
+│   └── db_diagram.png                     # Database schema diagram
+├── sql_queries/                           # Directory containing queries to create tables for this project and a query for    populating dates-table
+│   ├── create_table_queries.sql           # SQL script to create the necessary tables for just this project
 │   └── populating_dates_table_query.sql   # Query for populating dates-table in this project
-├── etl_sales_pipeline.py         # Main ETL script
-├── .env                          # Environment variables for database configuration
-├── requirements.txt              # Python dependencies
-├── README.md                     # Project documentation
+├── etl_sales_pipeline.py                  # Main ETL script
+├── .env                                   # Environment variables for database configuration
+├── requirements.txt                       # Python dependencies
+├── README.md                              # Project documentation
