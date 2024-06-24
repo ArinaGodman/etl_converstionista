@@ -94,7 +94,7 @@ Follow these steps to set up and run the ETL pipeline:
 
    `python etl_sales_pipeline.py`
 
-## Potential Database Structure
+  ## Potential Database Schema
 
 Database structure with more time and information could look like this:
 
