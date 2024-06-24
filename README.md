@@ -36,6 +36,7 @@ conversionista_etl/
 ├── .env                                   # Environment variables for database configuration
 ├── README.md                              # Project documentation
 ├── requirements.txt                       # Required packages
+```
 
 ## Setup and Installation
 
