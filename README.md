@@ -92,5 +92,11 @@ Follow these steps to set up and run the ETL pipeline:
 4. **Execute the main ETL pipeline script etl_sales_pipeline.py**
    Run python etl_sales_pipeline.py to extract sales data from JSON files, transform it into structured formats, and load it into the PostgreSQL database. Ensure your JSON data files are placed in the data/ directory before running the script.
 
-   python etl_sales_pipeline.py
+   `python etl_sales_pipeline.py`
+
+## Potential Database Structure
+
+Database structure with more time and information could look like this:
+
+![Database Structure](db_design_w_queries/db_diagram.png)
 
