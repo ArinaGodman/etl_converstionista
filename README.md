@@ -8,6 +8,7 @@ This project contains an ETL (Extract, Transform, Load) pipeline for processing 
 - [Project Structure](#project-structure)
 - [Setup and Installation](#setup-and-installation)
 - [Usage](#usage)
+- [Database Schema](database-schema)
 - [Potential Database Schema](#potential-database-schema)
 
 ## Overview
@@ -26,7 +27,8 @@ conversionista_etl/
 ├── data/                                  # Directory containing JSON data files
 ├── db_design_w_queries/                   # Directory containing db-design and queries to create tables for this design
 │   ├── create_tables.sql                  # SQL script to create the necessary tables accorging to design
-│   └── db_diagram.png                     # Database schema diagram
+│   ├── current_db_design.png              # Current database schema diagram
+│   └── db_diagram.png                     # Possible database schema diagram
 ├── sql_queries/                           # Directory containing queries to create tables for this project and a query for    populating dates-table
 │   ├── create_table_queries.sql           # SQL script to create the necessary tables for just this project
 │   └── populating_dates_table_query.sql   # Query for populating dates-table in this project
@@ -93,6 +95,12 @@ Follow these steps to set up and run the ETL pipeline:
    Run python etl_sales_pipeline.py to extract sales data from JSON files, transform it into structured formats, and load it into the PostgreSQL database. Ensure your JSON data files are placed in the data/ directory before running the script.
 
    `python etl_sales_pipeline.py`
+
+## Database Schema
+
+Current database schema: 
+
+![Database Structure](db_design_w_queries/current_db_design.png)
 
 ## Potential Database Schema
 
