@@ -141,14 +141,6 @@ def load_data_sales(conn, data):
         conn.commit()
         print("Data loaded successfully into 'sales' table.")
 
-        # Count total records in 'sales' table
-        cur.execute('''
-        SELECT COUNT(*) AS total_records
-        FROM sales;
-        ''')
-        total_records = cur.fetchone()[0]
-        print(f"Total number of records in 'sales' table: {total_records}\n")
-
 def load_data_sales_detail(conn, data):
     """
     Load sales_detail data into the PostgreSQL database.
@@ -179,15 +171,6 @@ def load_data_sales_detail(conn, data):
         conn.commit()
         print("Data loaded successfully into 'sales_detail' table.")
 
-        # Count total records in 'sales_detail' table
-        cur.execute('''
-        SELECT COUNT(*) AS total_records
-        FROM sales_detail;
-        ''')
-        
-        total_records = cur.fetchone()[0]
-        print(f"Total number of records in 'sales_detail' table: {total_records}\n")
-
 
 def etl_pipeline_sales(directory, db_config):
     """
@@ -216,3 +199,17 @@ def etl_pipeline_sales(directory, db_config):
         print(f"An error occurred in the ETL pipeline: {e}")
 
 etl_pipeline_sales(directory, db_config)
+
+with psycopg2.connect(**db_config) as conn:
+    with conn.cursor() as cur:
+        # Query total records in 'sales' table
+        cur.execute('SELECT COUNT(*) AS total_records FROM sales;')
+        total_sales_records = cur.fetchone()[0]
+
+        # Query total records in 'sales_detail' table
+        cur.execute('SELECT COUNT(*) AS total_records FROM sales_detail;')
+        total_sales_detail_records = cur.fetchone()[0]
+
+        # Print results
+        print(f"Total number of records in 'sales' table: {total_sales_records}")
+        print(f"Total number of records in 'sales_detail' table: {total_sales_detail_records}")
