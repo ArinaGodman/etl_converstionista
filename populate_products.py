@@ -58,7 +58,7 @@ def transform_data_products(products_data):
     for col in products_data.columns:
         if products_data[col].dtype == 'object':
             for pattern in patterns_to_replace:
-                products_data[col] = products_data[col].str.replace(pattern, '', regex=True)
+                products_data[col] = products_data[col].str.replace(pattern,'', regex=True)
         else:
             products_data[col] = products_data[col].replace(patterns_to_replace, np.nan)
     
@@ -102,18 +102,6 @@ def load_data_products(conn, data):
     '''
 
     with conn.cursor() as cur:
-        cur.execute('''
-        CREATE TABLE IF NOT EXISTS products (
-            item_id VARCHAR(255) PRIMARY KEY,
-            item_name VARCHAR(255),
-            item_brand VARCHAR(255),
-            item_category VARCHAR(255),
-            item_category2 VARCHAR(255),
-            item_category3 VARCHAR(255),
-            price_in_usd NUMERIC,
-            price NUMERIC
-        );
-        ''')
 
         for idx, row in data.iterrows():
             item_id = row['item_id']
@@ -153,6 +141,6 @@ def populating_products(directory, db_config):
             load_data_products(conn, transformed_data)
 
     except Exception as e:
-        print(f"An error occurred in the ETL pipeline for products: {e}")
+        print(f"An error occurred: {e}")
 
 populating_products(directory, db_config)
